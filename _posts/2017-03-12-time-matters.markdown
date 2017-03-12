@@ -112,3 +112,16 @@ What might happen:
  * Then there is a change in the time zone, for example DST starts earlier.
  * Next time when client asks for that date, it receives different local time, because transformation goes wrong.
 
+So, you had everything right, but result is wrong. Life is unfair. Deal with it.
+
+# What you _can_ do
+
+You can use local date/time everywhere. If there is no need to show that time in time zone different from where
+_event_ takes place then you don't need to transform it. And you don't need to build a service which returns you time zone
+based on location.
+In this case your date/time will be consistent all over your system and the chance of mistake will be minimal.
+
+That's what you should strive for.
+
+# When you need to transform to UTC
+
