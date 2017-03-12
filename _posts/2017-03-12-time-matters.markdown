@@ -123,5 +123,5 @@ In this case your date/time will be consistent all over your system and the chan
 
 That's what you should strive for.
 
-# When you need to transform to UTC
+# When you do need to transform to UTC
 
