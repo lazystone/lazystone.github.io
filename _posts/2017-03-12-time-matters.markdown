@@ -58,4 +58,24 @@ If we (over)simplify picture, then usually what you have is
 ![My helpful picture]({{ site.url }}/assets/2017/03/time-problem.png)
 
 Imagine that you have a web site which shows you a flight departure time, so if your API provides UTC instant and time zone,
-then burden of transforming these to local time is problem of your user. And by user we mean the client of your API.
+then burden of transformation these to local time is problem of your user. And by user we mean the client of your API.
+It might be a native application(desktop client or android application) or nice-looking web site. Thus transformation
+of the date/time happens on the client side which you **don't control**.
+
+Do you know how often the [Olson database](https://en.wikipedia.org/wiki/Tz_database) is updated?
+Around ten<sub>ish</sub> times per year. Almost every month. Sometimes just before the actual change of the time zone takes place.
+Sometimes _after_ the actual change, due to a late notice for example.
+
+Do you know the version of that database which your browser use? On my laptop it is `2016j`, on my phone...
+I'm not so sure really, I _hope_ that it's more or less fresh - at least it receives security patches occasionally,
+so _might be_ manufacturer includes updates for `tzdata` package.
+
+On my daughters tablet? Sure it's pretty old.
+
+Do you dare the unknown device to do date/time transformation using unknown version of the Olson database(tzdata)?
+If you do, then don't call it transformation anymore, name it mutation.
+
+![Just some picture](https://i.imgur.com/PCLti9D.jpg)
+
+Because results are unpredictable. There are good chances still that it will work correctly of course. Almost. Probably.
+
