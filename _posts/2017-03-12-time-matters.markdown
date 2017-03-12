@@ -97,8 +97,6 @@ And maintaining it is not an easy task as one can think:
 
 ![almost](https://i.imgur.com/3vgQCbh.jpg)
 
-# Almost?!
-
 > You have delighted us long enough
 >
 > ― Jane Austen, Pride and Prejudice
