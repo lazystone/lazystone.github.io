@@ -109,7 +109,7 @@ you have up-to-date `tzdata`, even then you might face some troubles. In rare ca
 What might happen:
 
  * Client provides some local date/time in the not so far future.
- * Server transforms this local time to the UTC instant and time_zone.
+ * Server transforms this local time to the UTC instant and time zone.
  * Then, there is a change in the time zone, for example DST starts earlier this year(yeah, that happens).
  * Next time when client asks for that date, it receives different local time, because transformation goes wrong.
 
