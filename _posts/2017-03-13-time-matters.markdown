@@ -125,7 +125,7 @@ And do you _always_ know the exact location?
 
 In this case your date/time will be consistent all over your system and the chances for a mistake will be minimal.
 
-That's what you should strive for.
+That's what you should strive for I believe.
 
 # When you **do need** to transform local time to UTC
 
