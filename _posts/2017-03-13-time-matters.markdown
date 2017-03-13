@@ -87,7 +87,7 @@ So, when you can't trust the client to do so, then just don't do that.
 
 Do date/time transformation on the server side, where you **can control** it.
 
-And maintaining it is not an easy task as one can think:
+Control usually means maintenance and maintaining this is not an easy task as one can think:
  * First of all you have to subscribe to [tz-announce](https://mm.icann.org/mailman/listinfo/tz-announce) mail list, so you'll be up-to-date with changes.
  * You have to upgrade `tzdata` package in your operating system. Sometimes it's a good idea to notify maintainers about changes in Olson database.
  * If you use java, then you have to [upgrade built-in version of tzdata](http://www.oracle.com/technetwork/java/javase/tzupdater-readme-136440.html).
