@@ -55,7 +55,7 @@ time when we need it? Isn't it just a presentation problem?
 
 Yeah... You can do that.. but the place **where** you do transformation from UTC to local time is also important.
 
-If we (over)simplify picture, then usually what you have is
+If we (over)simplify the use case, then usually what you have is
 
 ![My helpful picture]({{ site.url }}/assets/2017/03/time-problem.png)
 
