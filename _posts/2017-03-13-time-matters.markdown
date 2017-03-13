@@ -60,7 +60,7 @@ If we (over)simplify the use case, then usually what you have is
 ![My helpful picture]({{ site.url }}/assets/2017/03/time-problem.png)
 
 Imagine that you have a web site which shows you a flight departure time, so if your API provides UTC instant and time zone,
-then burden of transformation these to local time is problem of your user. And by user we mean the client of your API.
+then burden of transformation these to local time is a problem of your user. And by user we mean the client of your API.
 It might be a native application(desktop client or android application) or nice-looking web site. Thus transformation
 of the date/time happens on the client side which you **don't control**.
 
