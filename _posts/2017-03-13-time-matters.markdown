@@ -123,7 +123,7 @@ And you don't need to build a service which returns you a time zone
 based on location(like [that on](https://developers.google.com/maps/documentation/timezone/intro)).
 And do you _always_ know the exact location?
 
-In this case your date/time will be consistent all over your system and the chance of mistake will be minimal.
+In this case your date/time will be consistent all over your system and the chances for a mistake will be minimal.
 
 That's what you should strive for.
 
