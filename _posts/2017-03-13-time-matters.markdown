@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Time matters"
-date:   2017-03-12 17:38:26 +0100
+date:   2017-03-13 14:38:26 +0100
 categories: programming time
 ---
 
@@ -45,6 +45,8 @@ Because if your bank transaction says "2017-03-12 14:00" when your browser in on
 "2017-03-12 15:00" when you open your browser in different time zone, it's pretty normal. And understandable.
 
 But when you see that your flight departure time you are interested in the **local time of the location** where boarding takes place.
+
+Therefore everything what is written below in this post is about this special case and for the rest I encourage you to use UTC instant.
 
 # The <sub>in</sub>famous local time
 
@@ -106,10 +108,9 @@ you have up-to-date `tzdata`, even then you might face some troubles. In rare ca
 
 What might happen:
 
- * Client have a local date/time in the future.
- * It passes that date to the server.
- * Server transforms it to the UTC+time_zone.
- * Then there is a change in the time zone, for example DST starts earlier.
+ * Client provides some local date/time in the not so far future.
+ * Server transforms this local time to the UTC instant and time_zone.
+ * Then, there is a change in the time zone, for example DST starts earlier this year(yeah, that happens).
  * Next time when client asks for that date, it receives different local time, because transformation goes wrong.
 
 So, you had everything right, but result is wrong. Life is unfair. Deal with it.
@@ -117,11 +118,35 @@ So, you had everything right, but result is wrong. Life is unfair. Deal with it.
 # What you _can_ do
 
 You can use local date/time everywhere. If there is no need to show that time in time zone different from where
-_event_ takes place then you don't need to transform it. And you don't need to build a service which returns you time zone
-based on location.
+_event_ takes place then you don't need to transform it.
+And you don't need to build a service which returns you a time zone
+based on location(like [that on](https://developers.google.com/maps/documentation/timezone/intro)).
+And do you _always_ know the exact location?
+
 In this case your date/time will be consistent all over your system and the chance of mistake will be minimal.
 
 That's what you should strive for.
 
-# When you do need to transform to UTC
+# When you **do need** to transform local time to UTC
+
+Probably the only case when you do need to transform local time to UTC instant is when
+you need to trigger time-based events.
+
+For example to send notification one day or an hour in advance. Or to schedule some processing task.
+
+That's the moment then you should breath in and introduce date/time transformation into your system.
+
+And now you have two choices:
+
+* You can have local date/time as your primary date structure and
+do transformation only when you have to.
+* You can transform local date/time to UTC instant+time zone as soon as it crosses the boundaries
+of your system and transform it back when it's requested.
+
+I personally prefer first approach as there are less chances to make a mistake due to the reasons described above.
+
+But some developers prefer to have UTC instant as primary date structure and convert it every time it's requested.
+
+Don't make that choice blindly - look closely on your use cases.
+It can be that one way is more convenient for your system than another.
 
