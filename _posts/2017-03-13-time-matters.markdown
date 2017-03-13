@@ -92,8 +92,8 @@ Control usually means maintenance and maintaining this is not an easy task as on
  * You have to upgrade `tzdata` package in your operating system. Sometimes it's a good idea to notify maintainers about changes in Olson database.
  * If you use java, then you have to [upgrade built-in version of tzdata](http://www.oracle.com/technetwork/java/javase/tzupdater-readme-136440.html).
  * If you use joda-time, then [you are not saved as well](http://www.joda.org/joda-time/tz_update.html).
- * Your storage might use it's own copy of that database as well, for example PostgreSQL does. So you probably need to upgrade it.
- * It's a good idea to update that in all places at once.
+ * Your storage might use it's own copy of that database as well, for example PostgreSQL does. So you probably need to upgrade it as well.
+ * It's really a good idea to update that in all places at once to keep things consistent.
 
 # You are *almost* done ;)
 
