@@ -53,7 +53,7 @@ Therefore, this post is about this special case and for the rest I encourage you
 Ok, this is just a local time, can't we just keep time zone of the location next to UTC instant and transform it to the local
 time when we need it? Isn't it just a presentation problem?
 
-Yeah... You can do that.. but the place **where** you do the transformation from UTC to local time is also matters.
+Yeah... You can do that.. but the place **where** you do transformation from UTC to local time is also matters.
 
 If we (over)simplify picture, then usually what you have is
 
