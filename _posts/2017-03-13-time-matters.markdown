@@ -148,5 +148,5 @@ I personally prefer first approach as there are less chances to make a mistake d
 But some developers prefer to have UTC instant as primary date structure and convert it every time it's requested.
 
 Don't make that choice blindly - look closely on your use cases.
-It can be that one way is more convenient for your system than another.
+It can be that one way is more convenient in your system than another.
 
