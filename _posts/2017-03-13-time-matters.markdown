@@ -46,7 +46,7 @@ Because if your bank transaction says "2017-03-12 14:00" when your browser in on
 
 But when you see that your flight departure time you are interested in the **local time of the location** where boarding takes place.
 
-Therefore everything what is written below in this post is about this special case and for the rest I encourage you to use UTC instant.
+Therefore, this post is about this special case and for the rest I encourage you to use UTC instant.
 
 # The <sub>in</sub>famous local time
 
