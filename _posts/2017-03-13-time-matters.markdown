@@ -81,7 +81,7 @@ If you do, then don't call it transformation anymore, name it mutation.
 
 Because results are unpredictable. There are good chances still that it will work correctly of course. Almost. Probably.
 
-So, when you can't trust the client do so, then just don't do that.
+So, when you can't trust the client to do so, then just don't do that.
 
 **Use local date/time in your API in this case**.
 
