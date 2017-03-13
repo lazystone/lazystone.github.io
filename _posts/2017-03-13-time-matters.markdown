@@ -130,13 +130,14 @@ That's what you should strive for I believe.
 # When you **do need** to transform local time to UTC
 
 Probably the only case when you do need to transform local time to UTC instant is when
-you need to trigger time-based events.
+you need to perform some time-based calculations: get interval between two times, add, subtract and etc.
 
-For example to send notification one day or an hour in advance. Or to schedule some processing task.
+For example in order to send notification one day in advance. Or to schedule some processing task.
+Or aggregate time intervals for a report.
 
 That's the moment then you should breath in and introduce date/time transformation into your system.
 
-And now you have two choices:
+And now you have two options:
 
 * You can have local date/time as your primary date structure and
 do transformation only when you have to.
