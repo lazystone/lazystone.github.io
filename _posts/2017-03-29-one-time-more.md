@@ -85,7 +85,7 @@ Actually you can, but this has some drawbacks.
   * The time zone database(`tzdata` or [Olson database](https://en.wikipedia.org/wiki/Tz_database))
     might be outdated. Especially when it's not shipped as a part of software, but rather provided by operating system  .
 * Risk of time zone database to be changed _after_ you created a time in your system, but _before_ that time is consumed.
-  It might be seen as a really special case, bu unfortunately it's not:
+  It might be seen as a really special case, but unfortunately it's not:
   Olson database is being changed and updated more than ten times during the year usually.
   So, in average every month some country decides to stop or start DST earlier, or cancels it,
   or some town gets it's own time zone, or change old one to another one.
