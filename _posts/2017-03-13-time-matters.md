@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Time matters"
 date:   2017-03-13 14:38:26 +0100
 categories: programming time

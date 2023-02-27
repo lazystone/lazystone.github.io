@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Dockerizing a Spring Boot with Gradle only"
 date:   2018-02-17 13:15:00 +0100
 categories: programming gradle docker travis
@@ -76,4 +75,3 @@ project.version = buildNumber()
 At the end - creating docker image without any plugins is not more complicated than using any of them.
 
 **Disclaimer** - I'm not a gradle guru, so probably it can be re-written in even more compact form.
- 

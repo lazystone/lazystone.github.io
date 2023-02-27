@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "And again about time"
 date:   2017-03-29 13:28:00 +0100
 categories: programming time java
