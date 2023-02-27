@@ -11,8 +11,8 @@ ruby RUBY_VERSION
 # Happy Jekylling!
 gem "jekyll", "3.9.3"
 
-gem "minimal-mistakes-jekyll", "~> 4.24.0"
 gem "jekyll-remote-theme"
+gem "webrick", "~> 1.8"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -31,4 +31,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem "webrick", "~> 1.8"
+
