@@ -113,7 +113,7 @@ DEPENDENCIES
   jekyll-archives
   jekyll-asciidoc (~> 3.0.0)
   jekyll-data
-  minimal-mistakes-jekyll
+  minimal-mistakes-jekyll (~> 4.24.0)
   tzinfo-data
 
 RUBY VERSION
