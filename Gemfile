@@ -11,9 +11,8 @@ ruby RUBY_VERSION
 # Happy Jekylling!
 gem "jekyll", "3.9.3"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-#gem "minima", "~> 2.5.1"
 gem "minimal-mistakes-jekyll", "~> 4.24.0"
+gem "jekyll-remote-theme"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
