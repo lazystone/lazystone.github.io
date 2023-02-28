@@ -1,0 +1,126 @@
+---
+title: "Dell XPS 17 (9720)"
+categories: hardware linux
+---
+
+== Installation
+
+Before installing, it is necessary to modify some UEFI Settings.
+They can be accessed with F2 when booting.
+
+* Change the SATA Mode from the default "RAID" to "AHCI".
+This will allow Linux to detect the NVMe SSD.
+* Disable Secure Boot.
+
+=== Other settings
+
+* Turn *off* Intel TurboBoost - that usually the main cause of thermal throttling.
+* Turn *on* "Intel Speed Step" - downscale CPU clock and voltage when idling
+* Turn *off* "Intel Speed Shift Technology" - does not play nicely when "Intel Speed Step" is enabled.
+
+== Partitions
+
+* EFI System partition(fat32) `/boot/efi` - 512MiB
+* Root partition(ext4) `/` ~100GiB
+* Rest is `/home` - XFS
+
+== Liquorix Kernel
+
+https://liquorix.net/#install[https://liquorix.net/#install, window="_blank"]
+
+== Kernel settings
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="mitigations=off nvidia-drm.modeset=1 mem_sleep_default=deep"
+```
+
+* `mitigations=off` - disable all optional CPU mitigations.  This
+improves system performance, but it may also
+expose users to several CPU vulnerabilities.
+* `nvidia-drm.modeset=1` - enable the `DRIVER_MODESET` capability flag in the nvidia-drm devices so that DRM clients can use the various modesetting APIs. In addition to allowing clients that talk to the low-level DRM interface to work, it’s also necessary for some PRIME-related interoperability features.
+* `mem_sleep_default=deep` - by default, the very inefficient `s2idle` suspend variant is selected, which consumes a large amount of power.
+
+== Kernel modules
+
+The nouveau module is known to cause kernel panics and freezes.
+
+One way to mitigate this would be by adding `nomodeset` to the kernel options. However it is better to completely disable it with the blacklist method (recommended):
+
+```
+# /etc/modprobe.d/blacklist-dell-xps.conf
+blacklist nouveau
+blacklist rivafb
+blacklist nvidiafb
+blacklist rivatv
+blacklist nv
+```
+
+== Sensors
+
+```bash
+sudo modprobe dell-smm-hwmon
+
+# Add to /etc/modules to make permanent
+dell-smm-hwmon
+
+# Check sensors
+sudo apt install lm-sensors
+sensors
+```
+
+== Software
+
+=== ZSH
+
+```bash
+sudo apt install zsh
+
+# Make zsh default shell
+chsh -s $(which zsh)
+# Logout
+```
+
+=== oh-my-zsh
+
+https://ohmyz.sh/#install[https://ohmyz.sh/#install, window="_blank"]
+
+```bash
+# use `most` as a pager for `man`;
+sudo apt install most
+# ~/.zshrc
+export MANPAGER="/usr/bin/most -s"
+
+# https://github.com/sbugzu/gruvbox-zsh
+curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-theme > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
+# ~/.zshrc
+ZSH_THEME="gruvbox"
+SOLARIZED_THEME="dark"
+
+# Download and install Nerd Font: https://nerdfonts.com/
+```
+
+Copy link:/assets/2023/02/28/gruvbox.colorscheme[Gruvbox color scheme, window="_blank"] into `~/.local/share/konsole/gruvbox.colorscheme`
+
+=== SSH key
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+=== Git
+
+```bash
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt install git git-lfs git-man
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+
+git config --global core.autocrlf input
+
+# You can use an existing SSH key to sign commits and tags
+git config --global gpg.format ssh
+git config --global user.signingkey /home/USERNAME/.ssh/id_ed25519
+# To sign all commits by default
+git config --global commit.gpgsign true
+```
