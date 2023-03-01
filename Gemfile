@@ -10,8 +10,6 @@ ruby RUBY_VERSION
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "3.9.3"
-
-gem "jekyll-remote-theme"
 gem "webrick", "~> 1.8"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -21,11 +19,6 @@ gem "webrick", "~> 1.8"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "kramdown-parser-gfm"
-  gem 'asciidoctor-diagram', '~> 2.2.3'
-  gem 'jekyll-asciidoc', '~> 3.0.0'
-  gem 'jekyll-archives'
-  gem "jekyll-data"
-  gem 'github-pages'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
